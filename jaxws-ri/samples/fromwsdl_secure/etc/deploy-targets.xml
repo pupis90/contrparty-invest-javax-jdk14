@@ -35,7 +35,7 @@
         <property name="keystore.file" value="${as.home}/domains/${as.domain}/config/keystore.jks"/>
         <property name="keystore.pass" value="changeit"/>
         <property name="client.truststore.file" value="${basedir}/etc/certs/client.truststore"/>
-        <!--property name="client.truststore.file" value="${as.home}/domains/${as._etalon}/config/cacerts.jks"/-->
+        <!--property name="client.truststore.file" value="${as.home}/domains/${as.domain_etalon}/config/cacerts.jks"/-->
         <property name="client.truststore.pass" value="changeit"/>
         <property name="cert.alias" value="s1as"/>
         <property name="cert.file" value="${basedir}/etc/certs/server.certficate"/>        

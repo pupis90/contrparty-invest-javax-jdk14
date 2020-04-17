@@ -1,6 +1,6 @@
 package security.contrparties.investigations.endpoints;
 
-import security.contrparties.investigations._etalon.*;
+import security.contrparties.investigations.domain_etalon.*;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
