@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.*;
  * Задача в КИС
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "task", namespace = "http://spi2.ru/jaxws/datatypes",  propOrder = {"taskId","taskUrl","taskDateTime","contract"})
+@XmlType(name = "CISTask", namespace = "http://spi2.ru/jaxws/datatypes", propOrder = {"taskId", "taskUrl", "taskDateTime", "contract"})
 @XmlRootElement(name = "cisTask")
 public class CISTask {
 

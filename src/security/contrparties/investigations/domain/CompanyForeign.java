@@ -1,17 +1,13 @@
 package security.contrparties.investigations.domain;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
 /**
  * Иностранная компания
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ForeignCompany",  namespace = "http://spi2.ru/jaxws/datatypes", propOrder = {"regNum", "regDate",
+@XmlType(name = "CompanyForeign", namespace = "http://spi2.ru/jaxws/datatypes", propOrder = {"regNum", "regDate",
 																								"issuingAuthority", "fullName", "shortName", "nativeName",
 																									"nativeShortName","country", "phoneNumber", "email", "site","asvNsiCode","addresses" })
 public class CompanyForeign {
