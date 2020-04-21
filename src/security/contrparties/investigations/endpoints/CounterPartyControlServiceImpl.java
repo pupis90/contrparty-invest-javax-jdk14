@@ -7,7 +7,6 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
-import java.math.BigDecimal;
 import java.util.List;
 
 @WebService(serviceName = "CounterpartyControlService", portName = "CounterpartyControlServicePort", targetNamespace = "http://spi2.ru/jaxws/datatypes" /*"http://irule.spi2.ru/jaxws/iasproverka"*/)
@@ -117,8 +116,8 @@ public class CounterPartyControlServiceImpl {
      */
     @WebMethod(operationName = "PutCounterpartyInfo")
     @WebResult(name = "ResponseSync", targetNamespace = "http://spi2.ru/jaxws/datatypes", partName = "response")
-    public SyncResponse putCounterpartySrmId( @WebParam(name = "header") Header header, @WebParam(name = "registrationRegrequestId") BigDecimal registrationRegrequestId,
-                                              @WebParam(name = "counterparty") Counterparty counterparty, @WebParam(name = "counterpartySapIdentities") CounterpartySapIdentities counterpartySapIdentities) {
+    public SyncResponse putCounterpartySrmId(@WebParam(name = "header") Header header, @WebParam(name = "registrationRegrequestId") String registrationRegrequestId,
+                                             @WebParam(name = "counterparty") Counterparty counterparty, @WebParam(name = "counterpartySapIdentities") CounterpartySapIdentities counterpartySapIdentities) {
         SyncResponse handlerStatus = new SyncResponse();
 
         //1. Найти сущность
