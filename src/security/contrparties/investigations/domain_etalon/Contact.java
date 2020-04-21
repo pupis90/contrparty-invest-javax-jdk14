@@ -10,9 +10,15 @@ import javax.xml.bind.annotation.XmlType;
  * Для Договора не заполняется
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Contact", namespace = "http://spi2.ru/jaxws/datatypes", propOrder = {"fio","firstName", "secondName", "lastName", "inn", "post","phone","email","language"})
+@XmlType(name = "Contact", namespace = "http://spi2.ru/jaxws/datatypes", propOrder = {"contactGuid", "fio", "firstName", "secondName", "lastName", "inn", "post", "phone", "email", "language"})
 
 public class Contact {
+
+	/**
+	 * GUID контакта
+	 */
+	@XmlElement(name = "contact_guid", required = true)
+	public String contactGuid;
 
 	/**ФИО*/
 	@XmlElement

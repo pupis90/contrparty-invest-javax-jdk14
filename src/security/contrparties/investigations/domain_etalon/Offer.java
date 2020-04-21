@@ -6,19 +6,28 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import java.math.BigDecimal;
 
-
-@XmlType(name = "Offer",  namespace = "http://spi2.ru/jaxws/datatypes")
+@XmlType(name = "Offer", namespace = "http://spi2.ru/jaxws/datatypes",
+		propOrder = {"sap_srm_id", "participRequestGuid", "offertaAmmount"})
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Offer {
 
-	/** Cумма предложения с НДС*/
-
-	@XmlElement(namespace = "http://spi2.ru/jaxws/datatypes")
-	public BigDecimal offertaAmmount;
-
-	@XmlElement(namespace = "http://spi2.ru/jaxws/datatypes")
+	/**
+	 * Уникальный код участника в системе SAP SRM
+	 */
+	@XmlElement(required = true)
 	public BigDecimal sap_srm_id;
 
+	/**
+	 * GUID заявки на проверку участника в составе группы
+	 */
+	@XmlElement(name = "prtcip_request_guid", required = true)
+	public String participRequestGuid;
+
+	/**
+	 * Cумма предложения с НДС - может отсутсвовать
+	 */
+	@XmlElement
+	public BigDecimal offertaAmmount;
 
 
 }

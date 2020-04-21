@@ -85,15 +85,20 @@ public class CounterPartyControlServiceImpl {
 /**************************************************************************************************************/
     //******<!-- Сообщения SAP SRM. Регистрация участника и cогласование участника на этапах конкуррентной процедуры -->
 
+
     /**
-     * Метод, принимающий сообщение о том , что контрагент подал заявку на регистрацию (в SAP SRM)
-     *
-     * @param counterparty - реквизиты контрагента и др. информация
+     *  Метод, принимающий сообщение о том , что контрагент подал заявку на регистрацию (в SAP SRM)
+     *  с целью проведения проверки основных данных, предоставленных контрагентом
+     * @param header
+     * @param registrReqGuid
+     * @param counterparty
      * @return
      */
     @WebMethod(operationName = "CheckAndSaveRegistrCounterpartySRM_Async")
     @WebResult(name = "ResponseSync", targetNamespace = "http://spi2.ru/jaxws/datatypes", partName = "response")
-    public SyncResponse checkAndSaveRegistrCounterpartySRM_Async(@WebParam(name = "header") Header header, @WebParam(name = "counterparty") Counterparty counterparty) {
+    public SyncResponse checkAndSaveRegistrCounterpartySRM_Async(@WebParam(name = "header") Header header,
+                                                                 @WebParam(name = "registrreq_guid") String registrReqGuid,
+                                                                 @WebParam(name = "counterparty") Counterparty counterparty) {
         SyncResponse handlerStatus = new SyncResponse();
         return handlerStatus;
     }

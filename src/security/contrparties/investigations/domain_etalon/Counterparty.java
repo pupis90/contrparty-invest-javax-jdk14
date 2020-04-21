@@ -7,8 +7,39 @@ import javax.xml.bind.annotation.XmlType;
 import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Counterparty",  namespace = "http://spi2.ru/jaxws/datatypes")
+@XmlType(name = "Counterparty", namespace = "http://spi2.ru/jaxws/datatypes",
+		propOrder = {"isNew", "needAtributeUpdate", "isResident", "isEntrepreneur", "companyRus", "flPrivateEntrepreneur",
+				"companyForeign", "bankDetails", "contacts", "confirmLocation", "confirmAbility"})
 public class Counterparty {
+
+	/**
+	 * Признак того, что сообщение о новом зарегистрировавшемся участнике
+	 * Если false значит это обновления. Атрибуты лица будут обновлены, если признак needAtributeUpdate = true
+	 * Остальные элементы, если они не пустые, будут считаться заменой предыдущим
+	 */
+	@XmlElement(required = true)
+	public boolean isNew;
+
+	/**
+	 * Нужен, когда isNew == false Признак обновления атрибутов компании, требующихся к учету в системе
+	 */
+	@XmlElement(required = true)
+	public boolean needAtributeUpdate;
+
+
+	/**
+	 * Признак резидента
+	 */
+	@XmlElement(required = true)
+	public boolean isResident;
+
+
+	/**
+	 * Признак ИП
+	 */
+	@XmlElement(required = true)
+	public boolean isEntrepreneur;
+
 
 	/** Либо Компрания - контрагнет - резидент	 */
 	@XmlElement
@@ -19,12 +50,13 @@ public class Counterparty {
 	public PrivateEntrepreneur flPrivateEntrepreneur;
 
 	/**Либо Физическое лицо -  контрагнет - резидент	 */
-	@XmlElement
-	public PersonRUS fl;
+	//@XmlElement
+	//public PersonRUS fl;
 
 	/** Либо Иностр. компания  */
 	@XmlElement
 	public CompanyForeign companyForeign;
+
 
 	@XmlElement
 	public List<BankDetail> bankDetails;
