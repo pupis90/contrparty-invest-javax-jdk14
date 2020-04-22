@@ -10,7 +10,8 @@ import javax.xml.bind.annotation.XmlType;
  * Для Договора не заполняется
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Contact", namespace = "http://spi2.ru/jaxws/datatypes", propOrder = {"contactGuid", "fio", "firstName", "secondName", "lastName", "inn", "post", "phone", "email", "language"})
+@XmlType(name = "Contact", namespace = "http://spi2.ru/jaxws/datatypes", propOrder = {"contactGuid", "fio", "firstName", "secondName", "lastName",
+        "inn", "post", "phone_country_cod", "phone", "email", "language"})
 
 public class Contact {
 
@@ -43,6 +44,12 @@ public class Contact {
 	/**Должность*/
 	@XmlElement
 	public String post;
+
+    /**
+     * Телефон
+     */
+    @XmlElement
+    public String phone_country_cod;
 
 	/** Телефон */
 	@XmlElement

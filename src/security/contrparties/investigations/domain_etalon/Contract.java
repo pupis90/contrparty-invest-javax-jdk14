@@ -1,10 +1,6 @@
 package security.contrparties.investigations.domain_etalon;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -72,7 +68,7 @@ public class Contract {
 
 	/** Предмет договора*/
 	@XmlElement(name ="subject", required = false)
-	public String subject;
+	public Dictionary subject;
 
 	/** Подтип договоора, напр. Договор */
 	@XmlElement(name ="sub_category", required = false)
@@ -132,7 +128,7 @@ public class Contract {
 
 	/** Cтатус */
 	@XmlElement(name ="approval_stage", required = false)
-	public Dictionary approvalStage;
+	public String approvalStage;
 
 	/** Версия, напр. 001.003.001.000 	 */
 	@XmlElement(name ="version", required = false)
