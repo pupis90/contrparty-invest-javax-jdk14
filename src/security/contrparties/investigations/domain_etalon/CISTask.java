@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.*;
 public class CISTask {
 
 	/**  id задачи в КИС */
-	@XmlElement(name = "task_id")
+	@XmlElement(name = "task_id", required = true)
 	public String taskId;
 
 	/**  URI задачи в КИС */

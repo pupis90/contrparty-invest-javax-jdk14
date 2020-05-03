@@ -24,7 +24,7 @@ public class CompanyRus {
 	@XmlElement(required = true)
 	public String okpo;
 
-	@XmlElement(required = true)
+	@XmlElement
 	public String bic;
 
 	@XmlElement

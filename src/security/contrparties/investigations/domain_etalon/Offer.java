@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlType;
 import java.math.BigDecimal;
 
 @XmlType(name = "Offer", namespace = "http://spi2.ru/jaxws/datatypes",
-		propOrder = {"sap_srm_id", "participRequestGuid", "offertaAmmount"})
+		propOrder = {"sap_srm_id", "participRequestGuid", "offertaAmmount", "confirmAbility"})
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Offer {
 
@@ -28,6 +28,14 @@ public class Offer {
 	 */
 	@XmlElement
 	public BigDecimal offertaAmmount;
+
+	/**
+	 * Данные о подтверждении возможности выполнения контракта собственными силами.
+	 * Представляют собой прикрепленный файл со справкой от КА о том, что он будет выполнять работы с использованием собственных мощностей и сотрудников в штате,
+	 * либо обоснование привлечения соисполнителей с указанием порядка распределения функций и ролей с субподрядчиком
+	 */
+	@XmlElement
+	public Attachment confirmAbility;
 
 
 }
